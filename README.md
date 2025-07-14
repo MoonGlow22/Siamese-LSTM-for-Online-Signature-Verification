@@ -31,34 +31,6 @@ Each `.txt` file should contain 3 columns (X, Y, Time).
 
 
 
-## 📈 Outputs
-All results are stored under the training_outputs/ directory:
-
-•	models/ – trained models for each test pair
-
-•	processors/ – saved data preprocessors
-
-•	thresholds/ – optimal cosine distance thresholds
-
-•	test_results/ – ROC, loss, confusion matrix plots
-
-•	all_combinations_results.pkl – summary of all training combinations
-
-
-## 📉 Evaluation Metrics
-
-•	Accuracy
-
-•	Precision
-
-•	Recall
-
-•	F1-score
-
-•	ROC AUC (via plotting)
-
-•	Confusion matrix and distance distributions
-
 ## 📊 Post-Training Analysis
 After all person combinations have been evaluated, the script analyze_all_combinations_results.py allows you to analyze the overall performance of the model across different test sets.
 Key Features:
