@@ -2,14 +2,6 @@
 
 This project implements a signature verification system using a Siamese LSTM neural network architecture. It compares two signatures and determines whether they belong to the same person based on their dynamic properties extracted from the signature data.
 
-## 🧠 Overview
-
-The system:
-- Preprocesses raw signature data (normalization, interpolation)
-- Generates balanced positive and negative signature pairs
-- Trains a Siamese LSTM network using contrastive loss
-- Evaluates model performance on all person-wise combinations
-- Visualizes training progress, distributions, and performance metrics
 
 ## 📊 Dataset Format
 
@@ -29,6 +21,18 @@ Signatures/
 
 Each `.txt` file should contain 3 columns (X, Y, Time).  
 
+## 🚀 How to Run
+1.	Place your dataset under the Signatures/ directory.
+2.	Configure settings in config.py.
+3.	Run the training:
+python main.py
+The model will:
+
+•	Train and validate on all pairwise combinations of people (leave-2-subjects-out)
+
+•	Save each trained model and evaluation result
+
+•	Print performance summaries
 
 
 ## 📊 Post-Training Analysis
