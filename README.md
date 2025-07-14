@@ -21,19 +21,6 @@ Signatures/
 
 Each `.txt` file should contain 3 columns (X, Y, Time).  
 
-## 🚀 How to Run
-1.	Place your dataset under the Signatures/ directory.
-2.	Configure settings in config.py.
-3.	Run the training:
-python main.py
-The model will:
-
-•	Train and validate on all pairwise combinations of people (leave-2-subjects-out)
-
-•	Save each trained model and evaluation result
-
-•	Print performance summaries
-
 
 ## 📊 Post-Training Analysis
 After all person combinations have been evaluated, the script analyze_all_combinations_results.py allows you to analyze the overall performance of the model across different test sets.
