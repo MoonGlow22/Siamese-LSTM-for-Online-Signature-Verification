@@ -2,6 +2,24 @@
 
 This project implements a signature verification system using a Siamese LSTM neural network architecture. It compares two signatures and determines whether they belong to the same person based on their dynamic properties extracted from the signature data.
 
+## 🚀 Usage Instructions
+
+### Step 1: Record Signatures
+First, record signatures using the `record_signatures.py` file. The system records when your index and middle fingers are apart and stops recording when they are close together.
+
+**Controls:**
+* Press `z` to start recording
+* Press `x` to stop and save the current signature
+* Press `q` to quit the application
+
+### Step 2: Clean Signature Data
+Run `remove_lines.py` to remove `-100, -100` lines from the recorded signatures. These lines indicate when fingers were brought together to temporarily pause recording, but this feature is not used in model training.
+
+### Step 3: Train the Model
+Execute the `main.py` file in the `SiameseLSTM` folder to start model training.
+
+### Step 4: Analyze Results (Optional)
+You can analyze the training results using `results_analyzer.py` to evaluate model performance.
 
 ## 📊 Dataset Format
 
