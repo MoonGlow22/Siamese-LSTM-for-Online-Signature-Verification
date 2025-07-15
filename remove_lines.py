@@ -22,5 +22,9 @@ def clean_txt_files(main_folder):
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.writelines(new_lines)
 
-clean_txt_files(r"D:\yazılım\python\imza\Signatures")  # enter the folder path here
+# Get the current script directory and create Signatures folder path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+signatures_path = os.path.join(current_dir, "Signatures")
 
+clean_txt_files(signatures_path)
+print("TXT files cleaned successfully!")
