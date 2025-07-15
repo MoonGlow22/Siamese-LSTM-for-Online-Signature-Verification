@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from timeit import default_timer as timer
 import sys
+import subprocess
+import platform
 
 # Configuration constants
 CAMERA_NUMBER = 0
@@ -64,6 +66,22 @@ class SignatureCapture:
         self.person_name = input("Name Surname: ")
         self.save_path = os.path.join("Signatures", self.person_name)
         Path(self.save_path).mkdir(parents=True, exist_ok=True)
+        
+        # Open the Signatures folder
+        self.open_signatures_folder()
+    
+    def open_signatures_folder(self):
+        "Open the Signatures folder in file explorer"
+        signatures_path = "Signatures"
+        try:
+            if platform.system() == "Windows":
+                os.startfile(signatures_path)
+            elif platform.system() == "Darwin":  # macOS
+                subprocess.run(["open", signatures_path])
+            else:  # Linux
+                subprocess.run(["xdg-open", signatures_path])
+        except Exception as e:
+            print(f"Could not open folder: {e}")
     
     def handle_key_events(self, key):
         """Handle keyboard inputs"""
