@@ -15,11 +15,11 @@ First, record signatures using the `record_signatures.py` file. The system recor
 ### Step 2: Clean Signature Data
 Run `remove_lines.py` to remove `-100, -100` lines from the recorded signatures. These lines indicate when fingers were brought together to temporarily pause recording, but this feature is not used in model training.
 
-### Step 3: Train the Model
-Execute the `main.py` file in the `SiameseLSTM` folder to start model training.
+### Step 3: Train and Test the Model
+Execute the `main.py` file in the `SiameseLSTM` folder to start model training and testing. Model architecture, training parameters, and output explanations are detailed in the README of the `SiameseLSTM` folder.
 
 ### Step 4: Analyze Results (Optional)
-You can analyze the training results using `results_analyzer.py` to evaluate model performance.
+You can further analyze the training and test results using `results_analyzer.py` to evaluate model performance.
 
 ## 📊 Dataset Format
 
