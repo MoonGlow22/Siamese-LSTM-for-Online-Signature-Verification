@@ -18,7 +18,7 @@ Run `remove_lines.py` to remove `-100, -100` lines from the recorded signatures.
 ### Step 3: Train and Test the Model
 Execute the `main.py` file in the `SiameseLSTM` folder to start model training and testing. Model architecture, training parameters, and output explanations are detailed in the README of the `SiameseLSTM` folder.
 
-### Step 4: Analyze Results (Optional)
+### Step 4: Post-Training Analysis
 You can further analyze the training and test results using `results_analyzer.py` to evaluate model performance.
 
 ## 📊 Dataset Format
