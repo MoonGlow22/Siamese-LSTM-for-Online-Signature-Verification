@@ -3,7 +3,6 @@
 # Controls:
 # z - Start capturing signature
 # x - Save the current signature
-# c - Convert captured signatures to images
 # q - Quit application
 ###############################################################################
 
@@ -15,10 +14,9 @@ import os
 from pathlib import Path
 from timeit import default_timer as timer
 import sys
-import createImage as ci
 
 # Configuration constants
-CAMERA_NUMBER = 1
+CAMERA_NUMBER = 0
 DIST_MAX = 80
 CAM_WIDTH = 2000
 CAM_HEIGHT = 1000
@@ -85,13 +83,6 @@ class SignatureCapture:
             self.camTitle = 'Saved. Press z to get next signature'
             self.nxt += 1
             
-        elif key == ord('c'):  # Convert signatures to images
-            self.drawSignature = False
-            self.getCoord = False
-            cv2.destroyAllWindows()
-            self.camTitle = 'signature'
-            self.convert_signatures_to_images()
-            
         elif key == ord('q'):  # Quit application
             cv2.destroyAllWindows()
             self.cap.release()
@@ -110,19 +101,6 @@ class SignatureCapture:
                     txt_file.write(", ".join(map(str, adjusted_line)) + "\n")
                     cv2.destroyAllWindows()
                 txt_file.write("-100, -100\n")
-    
-    def convert_signatures_to_images(self):
-        "Convert all saved signatures to images"
-        for itr in range(self.nxt - 1):
-            signature_width = SIGNATURE_AREA_P2[0] - SIGNATURE_AREA_P1[0]
-            signature_height = SIGNATURE_AREA_P2[1] - SIGNATURE_AREA_P1[1]
-            ci.createImageFromPoints2(
-                os.path.join(self.save_path, f"{itr+1}.txt"),
-                signature_width,
-                signature_height,
-                self.person_name,
-                itr
-            )
     
     def process_hand_landmarks(self, hand_landmarks, image_width, image_height):
         """Process hand landmarks to capture signature points"""
