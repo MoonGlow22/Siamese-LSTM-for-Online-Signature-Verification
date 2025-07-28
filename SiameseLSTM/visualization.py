@@ -48,7 +48,7 @@ def plot_results(train_losses, val_losses, y_test, distances, predictions, test_
     plt.subplot(2, 2, 4)
     ax = plt.gca()
     cm = confusion_matrix(y_test, predictions)
-    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Different", "Same"])
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Same", "Different"])
     disp.plot(cmap=plt.cm.Blues, ax=ax)
     plt.title("Confusion Matrix")
 
