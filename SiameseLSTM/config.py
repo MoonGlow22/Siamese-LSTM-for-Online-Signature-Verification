@@ -14,8 +14,8 @@ OUTPUT_DIRECTORY = os.path.join(parent_dir, "training_outputs")
 # Model parameters
 MODEL_CONFIG = {
     'input_size': 3,
-    'hidden_size': 128,
-    'num_layers': 2,
+    'hidden_size': 256,
+    'num_layers': 3,
     'use_attention': False
 }
 
@@ -29,3 +29,4 @@ TRAINING_CONFIG = {
     'patience': 15,
     'max_pairs_per_person': 200
 }
+
