@@ -51,7 +51,8 @@ def plot_results(train_losses, val_losses, y_test, distances, predictions, test_
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Same", "Different"])
     disp.plot(cmap=plt.cm.Blues, ax=ax)
     plt.title("Confusion Matrix")
-
+    plt.show()
+    
     filename = "_".join(test_persons) + ".png" if isinstance(test_persons, list) else str(test_persons) + ".png"
     save_path = os.path.join(OUTPUT_DIRECTORY,"test_results", filename)
     plt.tight_layout(rect=[0, 0, 1, 0.96])

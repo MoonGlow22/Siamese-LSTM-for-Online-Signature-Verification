@@ -30,7 +30,15 @@ class SignatureProcessor:
                 return None
                 
             if data.shape[1] >= 3:
-                signature = data.iloc[:, :3].values
+                # Extract coordinates and timestamps separately
+                xy_coords = data.iloc[:, :2].values
+                timestamps = data.iloc[:, 2].values
+                
+                # Calculate time differences
+                dt = np.diff(timestamps, prepend=timestamps[0])
+                
+                # Combine coordinates with time differences
+                signature = np.column_stack((xy_coords, dt))
                 
                 # Check for NaN and inf values
                 if np.any(np.isnan(signature)) or np.any(np.isinf(signature)):
