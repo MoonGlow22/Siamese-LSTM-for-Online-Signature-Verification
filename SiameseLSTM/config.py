@@ -19,7 +19,7 @@ MODEL_CONFIG = {
     'num_layers': 2,
     'use_attention': False,
     "dense_size": 128,
-    "dense_dropout": 0.3
+    "dense_dropout": 0.2
 }
 
 # Training parameters
@@ -31,3 +31,4 @@ TRAINING_CONFIG = {
     'patience': 15,
     'max_pairs_per_person': 200
 }
+
