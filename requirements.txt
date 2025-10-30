@@ -1,0 +1,8 @@
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.4
+scikit-learn==1.6.1
+scipy==1.13.1
+opencv-contrib-python==4.11.0.86
+mediapipe==0.10.21
+torch==2.1.0+cu118
